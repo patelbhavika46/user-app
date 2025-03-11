@@ -1,11 +1,10 @@
-// src/apollo-client.ts
-import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from "@apollo/client";
+
+const apiUrl = process.env.REACT_APP_GRAPHQL_URI;
 
 const client = new ApolloClient({
-  link: new HttpLink({
-    uri: "http://localhost:8000/graphql", // Replace with your GraphQL API URL
-  }),
+  uri: apiUrl, 
   cache: new InMemoryCache(),
 });
 
-export { client };
+export { client, gql, ApolloProvider };
