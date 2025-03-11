@@ -15,10 +15,14 @@ interface UserEdge {
 }
 
 interface UsersResponse {
-  users: {
-    edges: UserEdge[];
-  };
-}
+    users: {
+      edges: UserEdge[];
+      pageInfo: {
+        hasNextPage: boolean;
+        endCursor: string | null;
+      };
+    };
+  }
 
 const UserList: React.FC = () => {
   const { loading, error, data } = useQuery<UsersResponse>(GET_USERS);
