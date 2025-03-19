@@ -50,7 +50,7 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
         onClick={handleClick} // Use a typed event handler
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mx-auto block"
       >
-        Show Email
+        {showEmail ? 'Hide Email' : 'Show Email'}
       </button>
     </div>
   );
